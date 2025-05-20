@@ -50,14 +50,14 @@
   },
   "main": "server.js",
   "author": "Hoaivuxuan",
-  "email": "hello@Systemapp.com",
+  "email": "vuxuanhoai28@gmail.com",
   "license": "Fair-code License",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hoaivuxuan/crm-System.git"
+    "url": "git+https://github.com/Hoaivuxuan/crm-system"
   },
   "bugs": {
-    "url": "https://github.com/Hoaivuxuan/crm-System/issues"
+    "url": "https://github.com/Hoaivuxuan/crm-system/issues"
   },
-  "homepage": "https://github.com/Hoaivuxuan/crm-System"
+  "homepage": "https://github.com/Hoaivuxuan/crm-system"
 }

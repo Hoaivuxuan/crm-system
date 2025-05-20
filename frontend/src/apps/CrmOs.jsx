@@ -20,7 +20,7 @@ const DefaultApp = () => (
   </Localization>
 );
 
-export default function IdurarOs() {
+export default function CrmOs() {
   const { isLoggedIn } = useSelector(selectAuth);
 
   if (!isLoggedIn)
