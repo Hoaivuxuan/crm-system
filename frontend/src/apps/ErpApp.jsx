@@ -25,10 +25,6 @@ import storePersist from '@/redux/storePersist';
 export default function ErpCrmApp() {
   const { Content } = Layout;
 
-  // const { state: stateApp, appContextAction } = useAppContext();
-  // // const { app } = appContextAction;
-  // const { isNavMenuClose, currentApp } = stateApp;
-
   const { isMobile } = useResponsive();
 
   const dispatch = useDispatch();
@@ -37,16 +33,7 @@ export default function ErpCrmApp() {
     dispatch(settingsAction.list({ entity: 'setting' }));
   }, []);
 
-  // const appSettings = useSelector(selectAppSettings);
-
   const { isSuccess: settingIsloaded } = useSelector(selectSettings);
-
-  // useEffect(() => {
-  //   const { loadDefaultLang } = storePersist.get('firstVisit');
-  //   if (appSettings.idurar_app_language && !loadDefaultLang) {
-  //     window.localStorage.setItem('firstVisit', JSON.stringify({ loadDefaultLang: true }));
-  //   }
-  // }, [appSettings]);
 
   if (settingIsloaded)
     return (
@@ -86,5 +73,43 @@ export default function ErpCrmApp() {
         )}
       </Layout>
     );
-  else return <PageLoader />;
+  else
+    return (
+      <Layout hasSider>
+        <Navigation />
+
+        {isMobile ? (
+          <Layout style={{ marginLeft: 0 }}>
+            <HeaderContent />
+            <Content
+              style={{
+                margin: '40px auto 30px',
+                overflow: 'initial',
+                width: '100%',
+                padding: '0 25px',
+                maxWidth: 'none',
+              }}
+            >
+              <AppRouter />
+            </Content>
+          </Layout>
+        ) : (
+          <Layout>
+            <HeaderContent />
+            <Content
+              style={{
+                margin: '40px auto 30px',
+                overflow: 'initial',
+                width: '100%',
+                padding: '0 50px',
+                maxWidth: 1400,
+              }}
+            >
+              <AppRouter />
+            </Content>
+          </Layout>
+        )}
+      </Layout>
+    );
+  // <PageLoader />;
 }
