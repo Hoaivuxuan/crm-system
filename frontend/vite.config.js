@@ -29,6 +29,7 @@ export default ({ mode }) => {
         },
       },
     },
+    base: process.env.VITE_BASE_PATH || '/react-vite-deploy',
   };
   return defineConfig(config);
 };
